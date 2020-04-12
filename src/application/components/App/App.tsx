@@ -1,11 +1,14 @@
 import React from 'react';
 
-import { Routes } from '../Routes';
+import { Layout, Routes } from '../';
+import './styles.css';
 
 export const App = () => {
   return (
     <React.StrictMode>
-      <Routes />
+      <Layout>
+        <Routes />
+      </Layout>
     </React.StrictMode>
   );
 };
