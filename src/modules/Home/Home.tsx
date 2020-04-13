@@ -19,6 +19,7 @@ export const Home = () => {
           imageSrc={GIRL_PHONE_IMAGE}
           gradient={`linear-gradient(135deg, ${rgbaPrimary} 0%, ${rgbaSecondary} 100%)`}
           textColor="white"
+          height="100vh"
           blurSize={3}
           title="msgr.io"
           subtitle="Join us and exchange messages with your fiends!"

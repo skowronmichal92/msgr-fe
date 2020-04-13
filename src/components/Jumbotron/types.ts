@@ -12,6 +12,7 @@ export interface IJumbotronStyles {
   gradient?: string;
   textColor?: string;
   minHeight?: number;
+  height?: string;
   blurSize?: number;
 }
 

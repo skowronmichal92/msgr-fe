@@ -5,8 +5,9 @@ import { IJumbotronStyles } from './types';
 const SIDE_PADDING = 2;
 
 export const useStyles = makeStyles(({ spacing }) => ({
-  container: ({ minHeight = 50 }: IJumbotronStyles) => ({
+  container: ({ minHeight = 40, height = 'auto' }: IJumbotronStyles) => ({
     minHeight: spacing(minHeight),
+    height,
     position: 'relative',
   }),
   background: ({ imageSrc, gradient, blurSize = 0 }: IJumbotronStyles) => ({

@@ -14,6 +14,7 @@ export const Jumbotron = ({
   gradient,
   textColor,
   minHeight,
+  height,
   blurSize,
 }: IJumbotronProps) => {
   const classes = useStyles({
@@ -21,6 +22,7 @@ export const Jumbotron = ({
     gradient,
     textColor,
     minHeight,
+    height,
     blurSize,
   });
 
