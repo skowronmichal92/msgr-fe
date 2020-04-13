@@ -21,9 +21,9 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "typescript", "@typescript-eslint"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": "warn",
     "react/jsx-key": "warn"
   }
 }
