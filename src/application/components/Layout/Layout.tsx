@@ -1,10 +1,18 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, CssBaseline, ThemeProvider } from '@material-ui/core';
+
+import { defaultTheme } from '../../themes';
 
 interface ILayoutProps {
   children: React.ReactNode;
 }
 
 export const Layout = ({ children }: ILayoutProps) => {
-  return <Grid>{children}</Grid>;
+  return (
+    <ThemeProvider theme={defaultTheme}>
+      <CssBaseline>
+        <Grid>{children}</Grid>
+      </CssBaseline>
+    </ThemeProvider>
+  );
 };
