@@ -8,7 +8,6 @@ export const useStyles = makeStyles(({ spacing }) => ({
     width,
     height,
     position: 'relative',
-    border: '1px solid transparent',
   }),
   background: ({ imageSrc, gradient, blurSize }: IJumbotronStyles) => ({
     position: 'absolute',

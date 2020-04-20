@@ -5,8 +5,7 @@ import { PersonOutlined } from '@material-ui/icons';
 
 import { Panel, Input, InputPassword } from 'components';
 import { ILoginInput } from 'types/graphql';
-
-import { validationSchema } from './validationSchema';
+import { loginSchema } from 'common/validation';
 
 const initialValues: ILoginInput = {
   user: '',
@@ -17,7 +16,7 @@ export const LogIn = () => {
   return (
     <Formik
       initialValues={initialValues}
-      validationSchema={validationSchema}
+      validationSchema={loginSchema}
       onSubmit={(values, actions) => {
         console.log(values);
         actions.setSubmitting(false);
@@ -30,9 +29,9 @@ export const LogIn = () => {
               <Grid item xs={12}>
                 <Input
                   type="email"
-                  label="User name"
+                  label="E-mail"
                   name="user"
-                  placeholder="user name..."
+                  placeholder="e-mail..."
                   iconLeft={PersonOutlined}
                 />
               </Grid>
