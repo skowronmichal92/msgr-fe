@@ -7,7 +7,10 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "globals": {
     "Atomics": "readonly",
@@ -25,6 +28,36 @@
   "rules": {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": "warn",
-    "react/jsx-key": "warn"
+    "react/jsx-key": "warn",
+    "import/default": "off",
+    "import/no-absolute-path": "off",
+    "import/no-self-import": "error",
+    "import/no-useless-path-segments": "error",
+    "import/no-named-as-default-member": "error",
+    "import/no-unused-modules": "error",
+    "import/export": "error",
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }
+    ],
+    "import/newline-after-import": "error",
+    "import/no-default-export": "error",
+    "import/exports-last": "error"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }

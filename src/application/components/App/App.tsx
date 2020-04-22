@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Layout, Routes } from '../';
+import { Layout, Routes } from '..';
 
 export const App = () => {
   return (

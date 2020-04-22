@@ -1,12 +1,5 @@
 import { ButtonTypeMap } from '@material-ui/core';
 
-export interface IButtonOptions {
-  text: string;
-  to: string;
-  variant?: ButtonTypeMap['props']['variant'];
-  color?: ButtonTypeMap['props']['color'];
-}
-
 interface IJumbotronStylesProps {
   imageSrc: string;
   gradient?: string;
@@ -15,6 +8,13 @@ interface IJumbotronStylesProps {
   width?: string;
   height?: string;
   blurSize?: number;
+}
+
+export interface IButtonOptions {
+  text: string;
+  to: string;
+  variant?: ButtonTypeMap['props']['variant'];
+  color?: ButtonTypeMap['props']['color'];
 }
 
 export interface IJumbotronStyles
