@@ -1,37 +1,26 @@
-import { Button, ButtonProps, makeStyles } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import React from 'react';
-import { Link, LinkProps as RouterLinkProps } from 'react-router-dom';
 
-type LinkProps = Omit<
-  React.PropsWithoutRef<RouterLinkProps> &
-    React.RefAttributes<HTMLAnchorElement>,
-  'to'
->;
+import { Link } from '../Link';
 
-interface IButtonLinkProps {
-  to: string;
-  children: React.ReactNode;
-  linkProps?: LinkProps;
-  buttonProps?: ButtonProps;
-}
-
-const useStyles = makeStyles(() => ({
-  link: {
-    textDecoration: 'none',
-  },
-}));
+import { useStyles } from './styles';
+import { IButtonLinkStyles, IButtonLinkProps } from './types';
 
 export const ButtonLink = ({
   to,
+  variant = 'default',
   linkProps,
   buttonProps,
   children,
 }: IButtonLinkProps) => {
-  const classes = useStyles();
+  const stylesProps: IButtonLinkStyles = { variant };
+  const classes = useStyles(stylesProps);
 
   return (
-    <Link to={to} className={classes.link} {...linkProps}>
-      <Button {...buttonProps}>{children}</Button>
+    <Link to={to} {...linkProps}>
+      <Button className={classes.root} {...buttonProps}>
+        {children}
+      </Button>
     </Link>
   );
 };

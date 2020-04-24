@@ -20,7 +20,7 @@ export const Panel = ({ title, children }: IPanelProps) => {
   const isSmPage = useMediaQuery(breakpoints.up('sm'));
 
   return (
-    <Box clone py={isSmPage ? 4 : 2} px={2}>
+    <Box clone py={isSmPage ? 6 : 4} px={2}>
       <Grid container justify="center">
         <Box clone width={400}>
           <Grid item xs={12} sm="auto">
