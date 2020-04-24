@@ -1,6 +1,6 @@
+import { Button, ButtonProps, makeStyles } from '@material-ui/core';
 import React from 'react';
 import { Link, LinkProps as RouterLinkProps } from 'react-router-dom';
-import { Button, ButtonProps, makeStyles } from '@material-ui/core';
 
 type LinkProps = Omit<
   React.PropsWithoutRef<RouterLinkProps> &

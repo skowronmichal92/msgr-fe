@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Grid,
   Card,
@@ -9,6 +8,7 @@ import {
   Theme,
   useMediaQuery,
 } from '@material-ui/core';
+import React from 'react';
 
 interface IPanelProps {
   title: React.ReactNode;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Redirect, Switch, Route } from 'react-router-dom';
 
-import { Home, LogIn, SignUp, User, Messages, Message } from 'modules';
+import { Home, LogIn, SignUp, User, Messages, Message } from 'modules/views';
 
 import { ROUTES } from '../../utils';
 

@@ -10,21 +10,23 @@ interface IJumbotronStylesProps {
   blurSize?: number;
 }
 
-export interface IButtonOptions {
+interface IButtonOptions {
   text: string;
   to: string;
   variant?: ButtonTypeMap['props']['variant'];
   color?: ButtonTypeMap['props']['color'];
 }
 
-export interface IJumbotronStyles
+interface IJumbotronStyles
   extends Omit<Required<IJumbotronStylesProps>, 'gradient' | 'textColor'> {
   gradient: string | undefined;
   textColor: string | undefined;
 }
 
-export interface IJumbotronProps extends IJumbotronStylesProps {
+interface IJumbotronProps extends IJumbotronStylesProps {
   title: React.ReactNode;
   subtitle?: React.ReactNode;
   buttons?: IButtonOptions[];
 }
+
+export type { IButtonOptions, IJumbotronStyles, IJumbotronProps };

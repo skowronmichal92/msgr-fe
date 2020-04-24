@@ -7,9 +7,11 @@ import { validationRules } from './validationRules';
 
 const { user, password } = validationRules;
 
-export const loginShape: ObjectSchemaDefinition<ILoginInput> = {
+const loginShape: ObjectSchemaDefinition<ILoginInput> = {
   user,
   password,
 };
 
-export const loginSchema = yup.object().shape<ILoginInput>(loginShape);
+const loginSchema = yup.object().shape<ILoginInput>(loginShape);
+
+export { loginSchema };

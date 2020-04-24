@@ -1,6 +1,6 @@
-import React from 'react';
 import { Field } from 'formik';
 import { TextField } from 'formik-material-ui';
+import React from 'react';
 
 import { SimpleIcon, ClickableIcon } from './components';
 import { IInputProps } from './types';

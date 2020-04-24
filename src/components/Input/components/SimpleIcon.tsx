@@ -1,9 +1,9 @@
-import React from 'react';
 import {
   InputAdornment,
   InputAdornmentTypeMap,
   SvgIcon,
 } from '@material-ui/core';
+import React from 'react';
 
 interface ISimpleIcon {
   icon: typeof SvgIcon;

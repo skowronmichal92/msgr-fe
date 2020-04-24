@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
 import {
   LockOutlined,
   VisibilityOutlined,
   VisibilityOffOutlined,
 } from '@material-ui/icons';
+import React, { useState } from 'react';
 
 import { Input } from 'components';
 

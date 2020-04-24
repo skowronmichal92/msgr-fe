@@ -1,11 +1,11 @@
-import React from 'react';
-import { Formik, Form } from 'formik';
 import { Grid, Button } from '@material-ui/core';
 import { PersonOutlined, MailOutlineOutlined } from '@material-ui/icons';
+import { Formik, Form } from 'formik';
+import React from 'react';
 
+import { registerSchema } from 'common/validation';
 import { Panel, Input, InputPassword } from 'components';
 import { IRegisterInput } from 'types/graphql';
-import { registerSchema } from 'common/validation';
 
 const initialValues: IRegisterInput = {
   name: '',

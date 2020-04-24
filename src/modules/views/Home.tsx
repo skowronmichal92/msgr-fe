@@ -1,5 +1,5 @@
-import React from 'react';
 import { Grid, useTheme } from '@material-ui/core';
+import React from 'react';
 
 import { ROUTES } from 'application/utils';
 import { GIRL_PHONE_IMAGE } from 'assets/images';

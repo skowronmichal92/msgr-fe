@@ -1,4 +1,3 @@
-import React from 'react';
 import {
   Box,
   InputAdornment,
@@ -6,6 +5,7 @@ import {
   IconButton,
   SvgIcon,
 } from '@material-ui/core';
+import React from 'react';
 
 interface IClickableIcon {
   icon: typeof SvgIcon;
