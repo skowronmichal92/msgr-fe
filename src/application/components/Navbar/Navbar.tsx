@@ -8,16 +8,25 @@ import {
 } from '@material-ui/core';
 import { ChatOutlined } from '@material-ui/icons';
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { ROUTES } from 'application/constants';
 import { LINKS_PROPS } from 'common/constants';
 import { ButtonLink, Link } from 'components';
 
+const LOGIN_ALLOWED_ROUTES = [ROUTES.home, ROUTES.signup];
+const SIGNUP_ALLOWED_ROUTES = [ROUTES.home, ROUTES.login];
+
 export const Navbar = () => {
+  const { pathname } = useLocation();
+
+  const showLoginButton = LOGIN_ALLOWED_ROUTES.includes(pathname);
+  const showSignupButton = SIGNUP_ALLOWED_ROUTES.includes(pathname);
+
   return (
     <AppBar position="static">
       <Container>
-        <Toolbar>
+        <Toolbar disableGutters>
           <Grid container justify="space-between" alignItems="center">
             <Grid item>
               <Link to={ROUTES.home} variant="white">
@@ -26,6 +35,7 @@ export const Navbar = () => {
                     container
                     component="span"
                     alignItems="center"
+                    wrap="nowrap"
                     spacing={1}
                   >
                     <Grid item component="span">
@@ -41,30 +51,34 @@ export const Navbar = () => {
 
             <Grid item>
               <Grid container spacing={1}>
-                <Grid item>
-                  <ButtonLink
-                    to={LINKS_PROPS.signup.to}
-                    variant="white"
-                    buttonProps={{
-                      size: 'small',
-                    }}
-                  >
-                    {LINKS_PROPS.signup.text}
-                  </ButtonLink>
-                </Grid>
+                {showSignupButton && (
+                  <Grid item>
+                    <ButtonLink
+                      to={LINKS_PROPS.signup.to}
+                      variant="white"
+                      buttonProps={{
+                        size: 'small',
+                      }}
+                    >
+                      {LINKS_PROPS.signup.text}
+                    </ButtonLink>
+                  </Grid>
+                )}
 
-                <Grid item>
-                  <ButtonLink
-                    to={LINKS_PROPS.login.to}
-                    variant="white"
-                    buttonProps={{
-                      variant: 'outlined',
-                      size: 'small',
-                    }}
-                  >
-                    {LINKS_PROPS.login.text}
-                  </ButtonLink>
-                </Grid>
+                {showLoginButton && (
+                  <Grid item>
+                    <ButtonLink
+                      to={LINKS_PROPS.login.to}
+                      variant="white"
+                      buttonProps={{
+                        variant: 'outlined',
+                        size: 'small',
+                      }}
+                    >
+                      {LINKS_PROPS.login.text}
+                    </ButtonLink>
+                  </Grid>
+                )}
               </Grid>
             </Grid>
           </Grid>

@@ -1,15 +1,17 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Layout, Routes } from '..';
+import { Layout, Routes, UserProvider } from '..';
 
 export const App = () => {
   return (
     <React.StrictMode>
       <BrowserRouter>
-        <Layout>
-          <Routes />
-        </Layout>
+        <UserProvider>
+          <Layout>
+            <Routes />
+          </Layout>
+        </UserProvider>
       </BrowserRouter>
     </React.StrictMode>
   );

@@ -1,19 +1,51 @@
 import React from 'react';
-import { Redirect, Switch, Route } from 'react-router-dom';
+import { Redirect, Switch } from 'react-router-dom';
 
 import { Home, LogIn, SignUp, User, Messages, Message } from 'modules/views';
 
+import { PrivateRoute } from '..';
 import { ROUTES } from '../../constants';
 
 export const Routes = () => {
   return (
     <Switch>
-      <Route exact path={ROUTES.signup} component={SignUp} />
-      <Route exact path={ROUTES.login} component={LogIn} />
-      <Route exact path={ROUTES.user} component={User} />
-      <Route exact path={ROUTES.messages} component={Messages} />
-      <Route exact path={ROUTES.message} component={Message} />
-      <Route exact path={ROUTES.home} component={Home} />
+      <PrivateRoute
+        roles={['USER_UNAUTHORIZED']}
+        exact
+        path={ROUTES.signup}
+        component={SignUp}
+      />
+      <PrivateRoute
+        roles={['USER_UNAUTHORIZED']}
+        exact
+        path={ROUTES.login}
+        component={LogIn}
+      />
+      <PrivateRoute
+        roles={['USER_AUTHORIZED']}
+        exact
+        path={ROUTES.user}
+        component={User}
+      />
+      <PrivateRoute
+        roles={['USER_AUTHORIZED']}
+        exact
+        path={ROUTES.messages}
+        component={Messages}
+      />
+      <PrivateRoute
+        roles={['USER_AUTHORIZED']}
+        exact
+        path={ROUTES.message}
+        component={Message}
+      />
+      <PrivateRoute
+        roles={['USER_UNAUTHORIZED']}
+        redirectPath={ROUTES.messages}
+        exact
+        path={ROUTES.home}
+        component={Home}
+      />
 
       <Redirect to={ROUTES.home} />
     </Switch>
