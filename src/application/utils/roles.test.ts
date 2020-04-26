@@ -1,4 +1,4 @@
-import { UserRoles } from 'application/types';
+import { UserRoles } from '../types';
 
 import { getUserAuthorizedRoles, getUserUnauthorizedRoles } from './roles';
 
