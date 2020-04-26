@@ -1,8 +1,10 @@
 import { Grid, Button } from '@material-ui/core';
 import { PersonOutlined } from '@material-ui/icons';
 import { Formik, Form } from 'formik';
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { UserContext } from 'application/context';
+import { getUserAuthorizedRoles } from 'application/utils';
 import { Panel, Input, InputPassword } from 'common/components';
 import { loginSchema } from 'common/validation';
 import { ILoginInput } from 'graphql/types';
@@ -13,12 +15,20 @@ const initialValues: ILoginInput = {
 };
 
 export const LogIn = () => {
+  const { roles, setRoles } = useContext(UserContext);
+
   return (
     <Formik
       initialValues={initialValues}
       validationSchema={loginSchema}
       onSubmit={(values, actions) => {
         console.log(values);
+
+        setTimeout(() => {
+          const newRoles = getUserAuthorizedRoles(roles);
+          setRoles(newRoles);
+        }, 500);
+
         actions.setSubmitting(false);
       }}
     >

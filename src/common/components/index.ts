@@ -1,6 +1,6 @@
-export { ButtonLink } from './ButtonLink';
-export { Input } from './Input';
-export { InputPassword } from './InputPassword';
-export { Jumbotron } from './Jumbotron';
-export { Link } from './Link';
-export { Panel } from './Panel';
+export * from './ButtonLink';
+export * from './Input';
+export * from './InputPassword';
+export * from './Jumbotron';
+export * from './Link';
+export * from './Panel';

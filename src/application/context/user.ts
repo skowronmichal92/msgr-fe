@@ -4,4 +4,5 @@ import { IUser } from '../types';
 
 export const UserContext = createContext<IUser>({
   roles: [],
+  setRoles: () => undefined,
 });

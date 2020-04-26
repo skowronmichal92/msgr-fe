@@ -13,15 +13,22 @@ import { useLocation } from 'react-router-dom';
 import { ROUTES } from 'application/constants';
 import { ButtonLink, Link } from 'common/components';
 import { LINKS_PROPS } from 'common/constants';
+import { UserDropdown } from 'modules/components';
 
 const LOGIN_ALLOWED_ROUTES = [ROUTES.home, ROUTES.signup];
 const SIGNUP_ALLOWED_ROUTES = [ROUTES.home, ROUTES.login];
+const USER_DROPDOWN_ALLOWED_ROUTES = [
+  ROUTES.user,
+  ROUTES.messages,
+  ROUTES.message,
+];
 
 export const Navbar = () => {
   const { pathname } = useLocation();
 
-  const showLoginButton = LOGIN_ALLOWED_ROUTES.includes(pathname);
   const showSignupButton = SIGNUP_ALLOWED_ROUTES.includes(pathname);
+  const showLoginButton = LOGIN_ALLOWED_ROUTES.includes(pathname);
+  const showUserDropdown = USER_DROPDOWN_ALLOWED_ROUTES.includes(pathname);
 
   return (
     <AppBar position="static">
@@ -50,7 +57,7 @@ export const Navbar = () => {
             </Grid>
 
             <Grid item>
-              <Grid container spacing={1}>
+              <Grid container alignItems="center" spacing={1}>
                 {showSignupButton && (
                   <Grid item>
                     <ButtonLink
@@ -77,6 +84,12 @@ export const Navbar = () => {
                     >
                       {LINKS_PROPS.login.text}
                     </ButtonLink>
+                  </Grid>
+                )}
+
+                {showUserDropdown && (
+                  <Grid item>
+                    <UserDropdown />
                   </Grid>
                 )}
               </Grid>
