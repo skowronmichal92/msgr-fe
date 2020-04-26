@@ -1,10 +1,10 @@
 import React from 'react';
 import { Redirect, Switch } from 'react-router-dom';
 
-import { Home, LogIn, SignUp, User, Messages, Message } from 'modules/views';
+import { PrivateRoute } from 'application/components';
+import { ROUTES } from 'application/constants';
 
-import { PrivateRoute } from '../../components';
-import { ROUTES } from '../../constants';
+import { Home, LogIn, SignUp, User, Messages, Message } from '../../views';
 
 export const Routes = () => {
   return (

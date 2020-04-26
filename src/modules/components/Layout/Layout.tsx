@@ -9,7 +9,8 @@ import {
 } from '@material-ui/core';
 import React from 'react';
 
-import { defaultTheme } from '../../themes';
+import { defaultTheme } from 'application/themes';
+
 import { Navbar } from '../Navbar';
 
 interface ILayoutProps {

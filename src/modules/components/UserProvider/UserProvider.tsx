@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { UserContext } from '../../context';
-import { IUser } from '../../types';
+import { UserContext } from 'application/context';
+import { IUser } from 'application/types';
 
 interface IUserProvider {
   children: React.ReactNode;
