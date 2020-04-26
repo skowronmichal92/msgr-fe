@@ -1,7 +1,7 @@
 import { ObjectSchemaDefinition } from 'yup';
 
 import { yup } from 'application/utils';
-import { ILoginInput } from 'types/graphql';
+import { ILoginInput } from 'graphql/types';
 
 import { validationRules } from './validationRules';
 

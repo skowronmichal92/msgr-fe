@@ -1,4 +1,4 @@
-type AuthorizedRoles = 'USER_AUTHORIZED' | 'USER_UNAUTHORIZED';
+import { AuthorizedRoles } from 'graphql/types';
 
 type UserRoles = AuthorizedRoles;
 

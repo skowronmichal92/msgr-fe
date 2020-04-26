@@ -2,9 +2,9 @@ import { Grid, Box, useTheme } from '@material-ui/core';
 import React from 'react';
 
 import { GIRL_PHONE_IMAGE } from 'assets/images';
+import { Jumbotron } from 'common/components';
 import { LINKS_PROPS } from 'common/constants';
-import { Jumbotron } from 'components';
-import { hexToRgba } from 'utils';
+import { hexToRgba } from 'common/utils';
 
 export const Home = () => {
   const { palette } = useTheme();

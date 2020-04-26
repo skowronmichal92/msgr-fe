@@ -3,9 +3,9 @@ import { PersonOutlined, MailOutlineOutlined } from '@material-ui/icons';
 import { Formik, Form } from 'formik';
 import React from 'react';
 
+import { Panel, Input, InputPassword } from 'common/components';
 import { registerSchema } from 'common/validation';
-import { Panel, Input, InputPassword } from 'components';
-import { IRegisterInput } from 'types/graphql';
+import { IRegisterInput } from 'graphql/types';
 
 const initialValues: IRegisterInput = {
   name: '',

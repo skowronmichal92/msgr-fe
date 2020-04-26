@@ -1,7 +1,7 @@
 import { ObjectSchemaDefinition, StringSchema } from 'yup';
 
 import { yup } from 'application/utils';
-import { ILoginInput, IRegisterInput } from 'types/graphql';
+import { ILoginInput, IRegisterInput } from 'graphql/types';
 
 type ValidationProps = ILoginInput & IRegisterInput;
 

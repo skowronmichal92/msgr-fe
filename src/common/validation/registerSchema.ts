@@ -1,5 +1,5 @@
 import { yup } from 'application/utils';
-import { IRegisterInput } from 'types/graphql';
+import { IRegisterInput } from 'graphql/types';
 
 import { validationRules } from './validationRules';
 

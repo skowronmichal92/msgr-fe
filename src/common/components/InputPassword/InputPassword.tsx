@@ -5,9 +5,7 @@ import {
 } from '@material-ui/icons';
 import React, { useState } from 'react';
 
-import { Input } from 'components';
-
-import { IInputProps } from '../Input';
+import { Input, IInputProps } from '../Input';
 
 type IInputPasswordProps = Omit<
   IInputProps,

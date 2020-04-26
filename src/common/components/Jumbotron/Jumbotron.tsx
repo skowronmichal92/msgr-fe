@@ -1,7 +1,7 @@
 import { Grid, Box, Typography } from '@material-ui/core';
 import React from 'react';
 
-import { ButtonLink } from 'components';
+import { ButtonLink } from '../ButtonLink';
 
 import { useStyles } from './styles';
 import { IJumbotronProps, IJumbotronStyles, IButtonOptions } from './types';

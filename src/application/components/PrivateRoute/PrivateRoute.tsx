@@ -1,10 +1,9 @@
 import React, { useContext } from 'react';
 import { Route, RouteProps, Redirect } from 'react-router-dom';
 
-import { UserRoles } from 'types/graphql';
-
 import { ROUTES } from '../../constants';
-import { UserContext } from '../UserProvider';
+import { UserContext } from '../../context';
+import { UserRoles } from '../../types';
 
 interface IPrivateRouteProps extends RouteProps {
   roles: UserRoles[];

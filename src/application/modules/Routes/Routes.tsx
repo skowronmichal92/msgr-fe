@@ -3,7 +3,7 @@ import { Redirect, Switch } from 'react-router-dom';
 
 import { Home, LogIn, SignUp, User, Messages, Message } from 'modules/views';
 
-import { PrivateRoute } from '..';
+import { PrivateRoute } from '../../components';
 import { ROUTES } from '../../constants';
 
 export const Routes = () => {

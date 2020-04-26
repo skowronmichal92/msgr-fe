@@ -3,9 +3,9 @@ import { PersonOutlined } from '@material-ui/icons';
 import { Formik, Form } from 'formik';
 import React from 'react';
 
+import { Panel, Input, InputPassword } from 'common/components';
 import { loginSchema } from 'common/validation';
-import { Panel, Input, InputPassword } from 'components';
-import { ILoginInput } from 'types/graphql';
+import { ILoginInput } from 'graphql/types';
 
 const initialValues: ILoginInput = {
   user: '',
