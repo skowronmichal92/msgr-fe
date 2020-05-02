@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { Layout, Routes, UserProvider } from '../../components';
+import { Routes } from '../../navigation';
+import { UserProvider } from '../../user';
+import { Layout } from '../Layout';
 
 export const App = () => {
   return (

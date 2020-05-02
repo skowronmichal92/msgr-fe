@@ -14,7 +14,7 @@ import { ROUTES } from 'application/constants';
 import { ButtonLink, Link } from 'common/components';
 import { LINKS_PROPS } from 'common/constants';
 
-import { UserDropdown } from '../UserDropdown';
+import { UserDropdown } from '../../user';
 
 const LOGIN_ALLOWED_ROUTES = [ROUTES.home, ROUTES.signup];
 const SIGNUP_ALLOWED_ROUTES = [ROUTES.home, ROUTES.login];

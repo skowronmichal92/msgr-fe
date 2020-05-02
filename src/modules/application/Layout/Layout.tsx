@@ -10,7 +10,7 @@ import React from 'react';
 
 import { defaultTheme } from 'application/themes';
 
-import { Navbar } from '../Navbar';
+import { Navbar } from '../../navigation';
 
 interface ILayoutProps {
   children: React.ReactNode;
