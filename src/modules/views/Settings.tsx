@@ -8,7 +8,7 @@ import { Formik, Form } from 'formik';
 import React from 'react';
 
 import { userData } from '_db';
-import { Panel, Input, InputPassword } from 'common/components';
+import { Panel, Input, InputPassword, Container } from 'common/components';
 import { settingsSchema } from 'common/validation';
 import { ISettingsInput } from 'graphql/types';
 
@@ -33,76 +33,84 @@ export const Settings = () => {
       }}
     >
       {() => (
-        <Form>
-          <Panel title="Account settings">
-            <Grid container spacing={2}>
+        <Container>
+          <Form>
+            <Grid container spacing={6}>
               <Grid item xs={12}>
-                <Input
-                  label="Name"
-                  name="name"
-                  placeholder="name..."
-                  iconLeft={PersonOutlined}
-                />
+                <Panel title="Account settings">
+                  <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                      <Input
+                        label="Name"
+                        name="name"
+                        placeholder="name..."
+                        iconLeft={PersonOutlined}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Input
+                        type="email"
+                        label="E-mail"
+                        name="user"
+                        placeholder="e-mail..."
+                        iconLeft={MailOutlineOutlined}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <InputPassword
+                        label="Password"
+                        name="password"
+                        placeholder="password..."
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <InputPassword
+                        label="Confirm password"
+                        name="passwordConfirm"
+                        placeholder="confirm password..."
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        color="secondary"
+                        fullWidth
+                      >
+                        Submit
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Panel>
               </Grid>
               <Grid item xs={12}>
-                <Input
-                  type="email"
-                  label="E-mail"
-                  name="user"
-                  placeholder="e-mail..."
-                  iconLeft={MailOutlineOutlined}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <InputPassword
-                  label="Password"
-                  name="password"
-                  placeholder="password..."
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <InputPassword
-                  label="Confirm password"
-                  name="passwordConfirm"
-                  placeholder="confirm password..."
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="secondary"
-                  fullWidth
-                >
-                  Submit
-                </Button>
+                <Panel title="Profile settings">
+                  <Grid container spacing={2}>
+                    <Grid item xs={12}>
+                      <Input
+                        type="url"
+                        label="Picture"
+                        name="avatar"
+                        placeholder="picture..."
+                        iconLeft={FaceOutlined}
+                      />
+                    </Grid>
+                    <Grid item xs={12}>
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        color="secondary"
+                        fullWidth
+                      >
+                        Submit
+                      </Button>
+                    </Grid>
+                  </Grid>
+                </Panel>
               </Grid>
             </Grid>
-          </Panel>
-          <Panel title="Profile settings">
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Input
-                  type="url"
-                  label="Picture"
-                  name="avatar"
-                  placeholder="picture..."
-                  iconLeft={FaceOutlined}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="secondary"
-                  fullWidth
-                >
-                  Submit
-                </Button>
-              </Grid>
-            </Grid>
-          </Panel>
-        </Form>
+          </Form>
+        </Container>
       )}
     </Formik>
   );

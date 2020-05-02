@@ -5,7 +5,7 @@ import React, { useContext } from 'react';
 
 import { UserContext } from 'application/context';
 import { getUserAuthorizedRoles } from 'application/utils';
-import { Panel, Input, InputPassword } from 'common/components';
+import { Panel, Input, InputPassword, Container } from 'common/components';
 import { loginSchema } from 'common/validation';
 import { ILoginInput } from 'graphql/types';
 
@@ -33,38 +33,40 @@ export const LogIn = () => {
       }}
     >
       {() => (
-        <Form>
-          <Panel title="Log in to your msgr account!">
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Input
-                  type="email"
-                  label="E-mail"
-                  name="user"
-                  placeholder="e-mail..."
-                  iconLeft={PersonOutlined}
-                />
+        <Container>
+          <Form>
+            <Panel title="Log in to your msgr account!">
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <Input
+                    type="email"
+                    label="E-mail"
+                    name="user"
+                    placeholder="e-mail..."
+                    iconLeft={PersonOutlined}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <InputPassword
+                    label="Password"
+                    name="password"
+                    placeholder="password..."
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="secondary"
+                    fullWidth
+                  >
+                    Submit
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <InputPassword
-                  label="Password"
-                  name="password"
-                  placeholder="password..."
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="secondary"
-                  fullWidth
-                >
-                  Submit
-                </Button>
-              </Grid>
-            </Grid>
-          </Panel>
-        </Form>
+            </Panel>
+          </Form>
+        </Container>
       )}
     </Formik>
   );

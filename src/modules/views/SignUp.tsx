@@ -3,7 +3,7 @@ import { PersonOutlined, MailOutlineOutlined } from '@material-ui/icons';
 import { Formik, Form } from 'formik';
 import React from 'react';
 
-import { Panel, Input, InputPassword } from 'common/components';
+import { Panel, Input, InputPassword, Container } from 'common/components';
 import { registerSchema } from 'common/validation';
 import { IRegisterInput } from 'graphql/types';
 
@@ -25,53 +25,55 @@ export const SignUp = () => {
       }}
     >
       {() => (
-        <Form>
-          <Panel title="Register your msgr account!">
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Input
-                  label="Name"
-                  name="name"
-                  placeholder="name..."
-                  iconLeft={PersonOutlined}
-                />
+        <Container>
+          <Form>
+            <Panel title="Register your msgr account!">
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <Input
+                    label="Name"
+                    name="name"
+                    placeholder="name..."
+                    iconLeft={PersonOutlined}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Input
+                    type="email"
+                    label="E-mail"
+                    name="user"
+                    placeholder="e-mail..."
+                    iconLeft={MailOutlineOutlined}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <InputPassword
+                    label="Password"
+                    name="password"
+                    placeholder="password..."
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <InputPassword
+                    label="Confirm password"
+                    name="passwordConfirm"
+                    placeholder="confirm password..."
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Button
+                    type="submit"
+                    variant="contained"
+                    color="secondary"
+                    fullWidth
+                  >
+                    Submit
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <Input
-                  type="email"
-                  label="E-mail"
-                  name="user"
-                  placeholder="e-mail..."
-                  iconLeft={MailOutlineOutlined}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <InputPassword
-                  label="Password"
-                  name="password"
-                  placeholder="password..."
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <InputPassword
-                  label="Confirm password"
-                  name="passwordConfirm"
-                  placeholder="confirm password..."
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  type="submit"
-                  variant="contained"
-                  color="secondary"
-                  fullWidth
-                >
-                  Submit
-                </Button>
-              </Grid>
-            </Grid>
-          </Panel>
-        </Form>
+            </Panel>
+          </Form>
+        </Container>
       )}
     </Formik>
   );
