@@ -7,10 +7,11 @@ import { ILinkProps, ILinkStyles } from './types';
 export const Link = ({
   to,
   variant = 'default',
+  fullWidth = false,
   children,
   ...linkProps
 }: ILinkProps) => {
-  const stylesProps: ILinkStyles = { variant };
+  const stylesProps: ILinkStyles = { variant, fullWidth };
   const classes = useStyles(stylesProps);
 
   return (

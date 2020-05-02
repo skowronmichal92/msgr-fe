@@ -5,7 +5,6 @@ import {
   CardContent,
   Box,
   useTheme,
-  Theme,
   useMediaQuery,
 } from '@material-ui/core';
 import React from 'react';
@@ -16,8 +15,8 @@ interface IPanelProps {
 }
 
 export const Panel = ({ title, children }: IPanelProps) => {
-  const { breakpoints } = useTheme<Theme>();
-  const isSmPage = useMediaQuery(breakpoints.up('sm'));
+  const theme = useTheme();
+  const isSmPage = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
     <Box clone py={isSmPage ? 6 : 4} px={2}>
@@ -30,6 +29,7 @@ export const Panel = ({ title, children }: IPanelProps) => {
                   title={title}
                   titleTypographyProps={{
                     variant: 'body1',
+                    align: 'center',
                   }}
                 />
                 <CardContent>{children}</CardContent>

@@ -33,8 +33,8 @@ export const LogIn = () => {
       }}
     >
       {() => (
-        <Panel title="Log in to your msgr account!">
-          <Form>
+        <Form>
+          <Panel title="Log in to your msgr account!">
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Input
@@ -63,8 +63,8 @@ export const LogIn = () => {
                 </Button>
               </Grid>
             </Grid>
-          </Form>
-        </Panel>
+          </Panel>
+        </Form>
       )}
     </Formik>
   );

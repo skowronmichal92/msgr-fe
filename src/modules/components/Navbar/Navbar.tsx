@@ -20,6 +20,7 @@ const LOGIN_ALLOWED_ROUTES = [ROUTES.home, ROUTES.signup];
 const SIGNUP_ALLOWED_ROUTES = [ROUTES.home, ROUTES.login];
 const USER_DROPDOWN_ALLOWED_ROUTES = [
   ROUTES.user,
+  ROUTES.settings,
   ROUTES.messages,
   ROUTES.message,
 ];

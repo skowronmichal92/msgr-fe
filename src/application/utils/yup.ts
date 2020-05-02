@@ -7,6 +7,7 @@ yupObject.setLocale({
   string: {
     email: 'Invalid email address',
     min: ({ min }) => `Field must be at least ${min} characters`,
+    url: 'Invalid URL address',
   },
 });
 

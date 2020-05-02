@@ -10,6 +10,7 @@ type LinkProps = Omit<
 
 interface ILinkStylesProps {
   variant?: Variant;
+  fullWidth?: boolean;
 }
 
 type ILinkStyles = Required<ILinkStylesProps>;

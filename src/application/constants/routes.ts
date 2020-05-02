@@ -1,10 +1,20 @@
-type Routes = Record<string, string>;
+type RoutesKeys =
+  | 'home'
+  | 'login'
+  | 'message'
+  | 'messages'
+  | 'settings'
+  | 'signup'
+  | 'user';
+
+type Routes = Record<RoutesKeys, string>;
 
 export const ROUTES: Routes = {
   home: '/',
-  signup: '/signup',
   login: '/login',
-  user: '/user',
-  messages: '/messages',
   message: '/message',
+  messages: '/messages',
+  settings: '/settings',
+  signup: '/signup',
+  user: '/user',
 };

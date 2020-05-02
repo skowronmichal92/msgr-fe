@@ -4,7 +4,15 @@ import { Redirect, Switch } from 'react-router-dom';
 import { PrivateRoute } from 'application/components';
 import { ROUTES } from 'application/constants';
 
-import { Home, LogIn, SignUp, User, Messages, Message } from '../../views';
+import {
+  Home,
+  LogIn,
+  SignUp,
+  User,
+  Settings,
+  Messages,
+  Message,
+} from '../../views';
 
 export const Routes = () => {
   return (
@@ -20,6 +28,12 @@ export const Routes = () => {
         exact
         path={ROUTES.login}
         component={LogIn}
+      />
+      <PrivateRoute
+        roles={['USER_AUTHORIZED']}
+        exact
+        path={ROUTES.settings}
+        component={Settings}
       />
       <PrivateRoute
         roles={['USER_AUTHORIZED']}

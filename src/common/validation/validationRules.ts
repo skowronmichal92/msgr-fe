@@ -1,9 +1,9 @@
 import { ObjectSchemaDefinition, StringSchema } from 'yup';
 
 import { yup } from 'application/utils';
-import { ILoginInput, IRegisterInput } from 'graphql/types';
+import { ILoginInput, IRegisterInput, ISettingsInput } from 'graphql/types';
 
-type ValidationProps = ILoginInput & IRegisterInput;
+type ValidationProps = ILoginInput & IRegisterInput & ISettingsInput;
 
 const passwordSchema: StringSchema<string> = yup.string().min(8).required();
 
@@ -15,6 +15,7 @@ const validationRules: ObjectSchemaDefinition<ValidationProps> = {
     [yup.ref('password'), null],
     "Passwords don't match"
   ),
+  avatar: yup.string().url(),
 };
 
 export { validationRules };

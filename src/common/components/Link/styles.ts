@@ -4,9 +4,11 @@ import { CSSProperties } from 'react';
 import { ILinkStyles, Variant } from './types';
 
 export const useStyles = makeStyles(({ palette }) => ({
-  root: ({ variant }: ILinkStyles) => {
+  root: ({ variant, fullWidth }: ILinkStyles) => {
     const variants: Record<Variant, CSSProperties> = {
-      default: {},
+      default: {
+        color: 'inherit',
+      },
       white: {
         color: palette.common.white,
       },
@@ -15,6 +17,7 @@ export const useStyles = makeStyles(({ palette }) => ({
     return {
       textDecoration: 'none',
       display: 'inline-block',
+      width: fullWidth ? '100%' : undefined,
       ...variants[variant],
     };
   },

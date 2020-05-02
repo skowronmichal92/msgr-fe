@@ -1,0 +1,1 @@
+export { MenuItemText } from './MenuItemText';
