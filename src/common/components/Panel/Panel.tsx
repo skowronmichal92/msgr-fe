@@ -11,18 +11,16 @@ export const Panel = ({ title, children }: IPanelProps) => {
     <Grid container justify="center">
       <Box clone width={400}>
         <Grid item xs={12} sm="auto">
-          <Box clone>
-            <Card>
-              <CardHeader
-                title={title}
-                titleTypographyProps={{
-                  variant: 'body1',
-                  align: 'center',
-                }}
-              />
-              <CardContent>{children}</CardContent>
-            </Card>
-          </Box>
+          <Card>
+            <CardHeader
+              title={title}
+              titleTypographyProps={{
+                variant: 'body1',
+                align: 'center',
+              }}
+            />
+            <CardContent>{children}</CardContent>
+          </Card>
         </Grid>
       </Box>
     </Grid>

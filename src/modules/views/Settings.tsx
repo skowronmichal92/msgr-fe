@@ -1,4 +1,4 @@
-import { Grid, Button } from '@material-ui/core';
+import { Grid, Button, Box } from '@material-ui/core';
 import {
   PersonOutlined,
   MailOutlineOutlined,
@@ -35,54 +35,56 @@ export const Settings = () => {
       {() => (
         <Container>
           <Form>
-            <Grid container spacing={6}>
-              <Grid item xs={12}>
-                <Panel title="Account settings">
-                  <Grid container spacing={2}>
-                    <Grid item xs={12}>
-                      <Input
-                        label="Name"
-                        name="name"
-                        placeholder="name..."
-                        iconLeft={PersonOutlined}
-                      />
+            <Grid container>
+              <Box clone pb={6}>
+                <Grid item xs={12}>
+                  <Panel title="Account settings">
+                    <Grid container spacing={2}>
+                      <Grid item xs={12}>
+                        <Input
+                          label="Name"
+                          name="name"
+                          placeholder="name..."
+                          iconLeft={PersonOutlined}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Input
+                          type="email"
+                          label="E-mail"
+                          name="user"
+                          placeholder="e-mail..."
+                          iconLeft={MailOutlineOutlined}
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <InputPassword
+                          label="Password"
+                          name="password"
+                          placeholder="password..."
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <InputPassword
+                          label="Confirm password"
+                          name="passwordConfirm"
+                          placeholder="confirm password..."
+                        />
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Button
+                          type="submit"
+                          variant="contained"
+                          color="secondary"
+                          fullWidth
+                        >
+                          Submit
+                        </Button>
+                      </Grid>
                     </Grid>
-                    <Grid item xs={12}>
-                      <Input
-                        type="email"
-                        label="E-mail"
-                        name="user"
-                        placeholder="e-mail..."
-                        iconLeft={MailOutlineOutlined}
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <InputPassword
-                        label="Password"
-                        name="password"
-                        placeholder="password..."
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <InputPassword
-                        label="Confirm password"
-                        name="passwordConfirm"
-                        placeholder="confirm password..."
-                      />
-                    </Grid>
-                    <Grid item xs={12}>
-                      <Button
-                        type="submit"
-                        variant="contained"
-                        color="secondary"
-                        fullWidth
-                      >
-                        Submit
-                      </Button>
-                    </Grid>
-                  </Grid>
-                </Panel>
-              </Grid>
+                  </Panel>
+                </Grid>
+              </Box>
               <Grid item xs={12}>
                 <Panel title="Profile settings">
                   <Grid container spacing={2}>
