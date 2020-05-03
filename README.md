@@ -12,6 +12,8 @@ Install project dependencies
 yarn
 ```
 
+Download and run backend server locally from separate repository: [msgr-be](https://github.com/skowronmichal92/msgr-be). Follow instructions in project's readme to run it.
+
 Run app
 
 ```sh

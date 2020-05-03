@@ -5,24 +5,24 @@ import {
   FaceOutlined,
 } from '@material-ui/icons';
 import { Formik, Form } from 'formik';
-import React from 'react';
+import React, { useContext } from 'react';
 
-import { userData } from '_db';
+import { UserContext } from 'application/context';
 import { Panel, Input, InputPassword, Container } from 'common/components';
 import { settingsSchema } from 'common/validation';
 import { ISettingsInput } from 'graphql/types';
 
-const { name, user, password, avatar } = userData.user;
-
-const initialValues: ISettingsInput = {
-  name,
-  user,
-  password,
-  passwordConfirm: password,
-  avatar,
-};
-
 export const Settings = () => {
+  const { name, user, avatar = '' } = useContext(UserContext);
+
+  const initialValues: ISettingsInput = {
+    name,
+    user,
+    password: '',
+    passwordConfirm: '',
+    avatar,
+  };
+
   return (
     <Formik
       initialValues={initialValues}

@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
-import { IUser } from '../types';
+import { IUserContext } from '../types';
 
-export const UserContext = createContext<IUser>({
+export const UserContext = createContext<IUserContext>({
   name: '-',
   user: '-',
   roles: [],
