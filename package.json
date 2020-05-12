@@ -35,7 +35,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
+    "test:no-watch": "yarn test test --coverage --watchAll=false",
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src/",
     "prettify": "prettier --check --write .",
@@ -65,10 +66,19 @@
     "prettier": "^2.0.4",
     "pretty-quick": "^2.0.1"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx,js,jsx}",
+      "!src/**/index.{ts,tsx,js,jsx}",
+      "!src/**/*.d.{ts,tsx,js,jsx}",
+      "!src/**/types/*.{ts,tsx,js,jsx}",
+      "!src/**/types.{ts,tsx,js,jsx}"
+    ]
+  },
   "husky": {
     "hooks": {
       "pre-commit": "yarn pretty-quick --staged",
-      "pre-push": "yarn lint && yarn typescript"
+      "pre-push": "yarn lint && yarn typescript && yarn test:no-watch"
     }
   }
 }
